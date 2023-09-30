@@ -1,0 +1,15 @@
+{
+  "name": "consultancy-web",
+  "version": "1.0.0",
+  "description": "This is a basic consultancy web project as assignment for the position of backend trainee at talenship Global advisory forum company.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Mohammad Uvaiz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
