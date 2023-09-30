@@ -3,6 +3,7 @@ const app = express()
 const port = 8000
 const expressLayouts = require('express-ejs-layouts');
 const router = require('./routes');
+const db = require('./config/mongoose');
 
 // Set assets folder as static 
 app.use(express.static('./assets'));
