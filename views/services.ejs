@@ -1,0 +1,49 @@
+<div class="container mt-4">
+    
+    
+    <!-- it is only for the admin  -->
+    <%if(user.email == 'mohammeduvaiz0786@gmail.com'){%> <!--Set the admin email is mohammeduvaiz0786@gmail.com -->
+        <form action="/services/create" class="w-100 d-flex align-items-center justify-content-center flex-column" method="post">
+            <!-- <input type="text" name="head" placeholder="Enter Title of Service" required>
+    <input type="text" name="content" placeholder="Enter Description of Service" required>
+    <input type="text" name="price" placeholder="Price" required>
+    <input type="submit" value="Submit"> -->
+    <h3>For Admin Only</h3>
+    <div class="mb-3 w-50">
+        <label class="form-label">Title</label>
+        <input type="text" name="head" class="form-control" >
+    </div>
+    <div class="mb-3 w-50">
+        <label  class="form-label">Description</label>
+        <input type="text" name="content" class="form-control" >
+    </div>
+    <div class="mb-3 w-50">
+        <label class="form-label">Price</label>
+        <input type="text" name="price" class="form-control">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Submit">
+</form>
+<%}%>
+<h1 class="text-center my-4 text-primary">Our Services</h1>
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    
+    <%for(service of services){%>
+    <div class="col d-flex align-items-center">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h5 class="my-0 fw-normal"><%=service.head%></h5>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title pricing-card-title"><%=service.price%></h2>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li><%=service.content%></li>
+          </ul>
+          <button type="button" class="w-100 btn btn-lg btn-outline-primary">Grab Now</button>
+        </div>
+      </div>
+    </div>
+    <%}%>
+
+
+  </div>
+</div>
