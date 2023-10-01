@@ -2,9 +2,9 @@
     
     
     <!-- it is only for the admin  -->
-    <%if(user.email == 'mohammeduvaiz0786@gmail.com'){%> <!--Set the admin email is mohammeduvaiz0786@gmail.com -->
+    <%if(locals.user && user.email == 'mohammeduvaiz0786@gmail.com'){%> <!--Set the admin email is mohammeduvaiz0786@gmail.com -->
         <form action="/services/create" class="w-100 d-flex align-items-center justify-content-center flex-column" method="post">
-            <!-- <input type="text" name="head" placeholder="Enter Title of Service" required>
+    <!-- <input type="text" name="head" placeholder="Enter Title of Service" required>
     <input type="text" name="content" placeholder="Enter Description of Service" required>
     <input type="text" name="price" placeholder="Price" required>
     <input type="submit" value="Submit"> -->
@@ -24,7 +24,7 @@
     <input type="submit" class="btn btn-primary" value="Submit">
 </form>
 <%}%>
-<h1 class="text-center my-4 text-primary">Our Services</h1>
+<h1 class="text-center mt-2 mb-5 text-primary">Our Services</h1>
 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
     
     <%for(service of services){%>
