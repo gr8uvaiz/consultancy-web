@@ -16,10 +16,18 @@ module.exports.signup = function(req,res){
     })
 }
 
-module.exports.profile = function(req,res){
-    res.render('user_profile',{
-        title: 'My Profile | Consult Pro',
-    })
+
+module.exports.profile = async function(req,res){
+    const user = await User.findById(req.params.id)
+        if(user){
+            res.render('user_profile',{
+                title: 'My Profile | ConsultPro',
+                profile_user: user,
+            })
+        }
+        else{
+            return res.redirect('/users/login')
+        }
 }
 
 module.exports.createSession = function(req,res){

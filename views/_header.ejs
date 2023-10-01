@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/css/header.css">
-    <header class="mx-4 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 mb-5 border-bottom">
+    <header class="mx-4 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 border-bottom">
       <div class="col-md-3 mb-2 mb-md-0">
         <a class="fs-4" href="/">
             Consult Pro
@@ -21,8 +21,8 @@
             <button type="button" class="btn btn-primary">Sign-up</button>
         </a>
         <%}else{%>
-        <a href="/users/profile">
-            <button type="button" class="btn btn-outline-primary me-2">My profile</button>
+        <a href="/users/profile/<%=user.id%>">
+            <button type="button" class="btn btn-outline-primary me-2"><%= user.name %></button>
         </a>
         <a href="/users/signout">
             <button type="button" class="btn btn-primary">Sign Out</button>
