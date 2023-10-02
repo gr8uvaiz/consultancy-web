@@ -1,15 +1,33 @@
 const User = require('../models/user')
 module.exports.login = function(req,res){
+    try{
+        const currentUser = req.user.id;
+    }
+    catch{
+        return res.render('user_login',{
+             title:'Login | Consult Pro',
+        })
+    }
+    const currentUser = req.user.id;
     if(req.isAuthenticated()){
-        return res.redirect('/users/profile');
+        return res.redirect(`/users/profile/${currentUser}`);
     }
     return res.render('user_login',{
-            title:'Login | Consult Pro',
-    })
+        title:'Login | Consult Pro',
+   })
 }
 module.exports.signup = function(req,res){
+    try{
+        const currentUser = req.user.id;
+    }
+    catch{
+        return res.render('user_signup',{
+            title:'Sign Up | Consult Pro',
+        })
+    }
+    const currentUser = req.user.id;
     if(req.isAuthenticated()){
-        return res.redirect('/users/profile');
+        return res.redirect(`/users/profile/${currentUser}`);
     }
     return res.render('user_signup',{
         title:'Sign Up | Consult Pro',

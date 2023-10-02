@@ -19,7 +19,7 @@
     </div>
     <div class="mb-3 w-50">
         <label class="form-label">Price</label>
-        <input type="text" name="price" class="form-control">
+        <input type="number" name="price" class="form-control">
     </div>
     <input type="submit" class="btn btn-primary" value="Submit">
 </form>
@@ -34,11 +34,13 @@
           <h5 class="my-0 fw-normal"><%=service.head%></h5>
         </div>
         <div class="card-body">
-          <h2 class="card-title pricing-card-title"><%=service.price%></h2>
+          <h2 class="card-title pricing-card-title"><%=service.price%> <small>₹</small></h2>
           <ul class="list-unstyled mt-3 mb-4">
             <li><%=service.content%></li>
           </ul>
-          <button type="button" class="w-100 btn btn-lg btn-outline-primary">Grab Now</button>
+          <a href="/checkout/<%=service.id%>">
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Grab Now</button>
+          </a>
         </div>
       </div>
     </div>
